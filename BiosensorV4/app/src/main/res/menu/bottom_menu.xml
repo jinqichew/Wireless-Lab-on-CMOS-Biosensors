@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_cyclic_voltammetry"
+        android:icon="@drawable/cyclic_voltammetry"
+        android:title="V Sweep" />
+    <item
+        android:id="@+id/menu_amperometry"
+        android:icon="@drawable/amperometry"
+        android:title="AmperoM" />
+    <item
+        android:id="@+id/menu_potentiometry"
+        android:icon="@drawable/potentiometry"
+        android:title="PotentioM" />
+
+</menu>

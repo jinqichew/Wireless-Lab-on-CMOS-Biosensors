@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- TabLayout  -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="fixed"
+        app:tabGravity="fill" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Chart Page: only one Chart Vt -->
+        <LinearLayout
+            android:id="@+id/layout_chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chartVt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:minHeight="200dp" />
+        </LinearLayout>
+
+        <!-- Config Page, Here user can change the config to want they want -->
+        <LinearLayout
+            android:id="@+id/layout_config"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Duration (s)" />
+
+            <EditText
+                android:id="@+id/edtPeriod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter period in seconds"
+                android:inputType="numberDecimal" />
+
+            <Button
+                android:id="@+id/btnSendConfig"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center"
+                android:text="Send Config" />
+        </LinearLayout>
+
+    </FrameLayout>
+</LinearLayout>

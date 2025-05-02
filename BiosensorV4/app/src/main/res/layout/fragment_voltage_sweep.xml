@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- TabLayout  -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabGravity="fill"
+        app:tabMode="fixed" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Chart Page Indicate all three charts -->
+        <LinearLayout
+            android:id="@+id/layout_chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chartIV"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:minHeight="150dp" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chartVt"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:minHeight="150dp" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chartIt"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:minHeight="150dp" />
+
+        </LinearLayout>
+
+        <!-- ExportInfo  Output the export information -->
+        <LinearLayout
+            android:id="@+id/layout_export"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/tvExportInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Export information will be displayed here"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <!-- Config Page, Here user can change the config to want they want -->
+        <LinearLayout
+            android:id="@+id/layout_config"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="invisible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="Max Voltage (-0.8V to 0.8V)" />
+
+            <EditText
+                android:id="@+id/edtMaxVolt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter max voltage(V)"
+                android:inputType="numberSigned|numberDecimal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="Min Voltage (-0.8V to 0.8V)" />
+
+            <EditText
+                android:id="@+id/edtMinVolt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter min voltage(V)"
+                android:inputType="numberSigned|numberDecimal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="Sweep Rate (0.01- 0.4V)/s" />
+
+            <EditText
+                android:id="@+id/edtSweepRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Enter Scan rate(V/s)"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="Number of loops (1-8)" />
+
+            <EditText
+                android:id="@+id/edtLoops"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter number of Scans"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/SendData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:text="SendData" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+</LinearLayout>
